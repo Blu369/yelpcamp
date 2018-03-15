@@ -9,7 +9,7 @@ var express    = require("express"),
 mongoose.connect("mongodb://127.0.0.1/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-app.use(express.static('public'));
+app.use(express.static(__dirname +'/public'));
 seedDB();
 
 app.get("/", function(req, res){
